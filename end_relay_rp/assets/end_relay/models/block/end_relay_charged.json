@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "end_relay:block/end_relay_bottom",
+    "side": "end_relay:block/end_relay_side_on",
+    "top": "end_relay:block/end_relay_top"
+  }
+}

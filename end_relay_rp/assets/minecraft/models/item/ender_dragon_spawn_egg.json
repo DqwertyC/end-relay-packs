@@ -1,0 +1,17 @@
+{
+  "parent": "minecraft:item/template_spawn_egg",
+  "overrides": [
+    {
+      "model": "end_relay:block/end_relay",
+      "predicate": {
+        "custom_model_data": 4173001
+      }
+    },
+    {
+      "model": "end_relay:block/end_relay_charged",
+      "predicate": {
+        "custom_model_data": 4173002
+      }
+    }
+  ]
+}
