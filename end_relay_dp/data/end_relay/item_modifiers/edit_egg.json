@@ -1,0 +1,6 @@
+[
+  {
+    "function": "minecraft:set_nbt",
+    "tag": "{CustomModelData:4173001,EntityTag:{id:\"minecraft:marker\",Tags:[\"relay_spawner\"]}}"
+  }
+]
