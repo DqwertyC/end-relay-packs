@@ -1,5 +1,5 @@
 # End Relay Packs
-Data and Resource Pack for Kenadian's "End Relay" idea, originally posted here: https://www.youtu.be/L1i4izl25V4
+Data and Resource Pack for Kenadian's "End Relay" idea, originally posted here: https://youtu.be/L1i4izl25V4
 
 Video of datapack in action: https://youtu.be/vaMy4XQWOAw
 
