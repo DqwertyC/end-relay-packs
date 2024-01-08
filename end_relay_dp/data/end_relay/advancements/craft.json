@@ -1,0 +1,9 @@
+{
+  "criteria": {
+    "craft": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": { "recipe_id": "end_relay:end_relay_crafting" }
+    }
+  },
+  "rewards": { "function": "end_relay:rewards/replace_knowledge_book" }
+}

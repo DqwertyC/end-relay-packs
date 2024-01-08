@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "place": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": [
+                "minecraft:armor_stand"
+              ],
+              "nbt": "{EntityTag:{Tags:[\"relay_spawner\"]}}"
+            }
+          }
+        ]
+      }
+    }
+  },
+	"rewards": { "function": "end_relay:rewards/summon_new_relay" }
+}

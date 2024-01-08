@@ -1,16 +1,12 @@
-# Modify lodestones to have "custom model data", which will be passed to the spawn egg item when crafting.
-execute as @a[nbt={Inventory:[{id:"minecraft:lodestone"}]}] run function end_relay:scan_inventory
-
-# Modify the spawn egg in the player's hand.
-execute as @a[nbt={SelectedItem:{id:"minecraft:ender_dragon_spawn_egg",tag:{CustomModelData:4173001}}},nbt=!{SelectedItem:{tag:{EntityTag:{id:"minecraft:marker"}}}}] run item modify entity @s weapon.mainhand end_relay:edit_egg
-
-# Place new end relays
-execute as @e[type=marker,tag=relay_spawner] at @s run function end_relay:place_block
-
-# Handle interacting with and hitting the block
-execute as @e[tag=end_relay,tag=interaction] at @s if data entity @s interaction run function end_relay:handle_interaction
-execute as @e[tag=end_relay,tag=interaction] at @s if data entity @s attack run function end_relay:handle_attack
-
 # Clean up old entities
-execute as @e[tag=end_relay,tag=marker] at @s unless block ~ ~ ~ minecraft:obsidian run function end_relay:break_block
+execute as @e[tag=end_relay,tag=marker,predicate=!end_relay:in_obsidian] at @s run function end_relay:handle_break
 kill @e[tag=end_relay,tag=cart]
+
+# Shrink interactions near crouching players
+execute as @e[tag=end_relay,tag=interaction,tag=!hidden] at @s if entity @p[distance=..5,predicate=end_relay:crouching] run tag @s add hidden
+execute as @e[tag=end_relay,tag=interaction,tag=hidden] at @s unless entity @p[distance=..5,predicate=end_relay:crouching] run tag @s remove hidden
+execute as @e[tag=end_relay,tag=interaction,tag=hidden] run data merge entity @s {width:0.95f,height:0.9f}
+execute as @e[tag=end_relay,tag=interaction,tag=!hidden] run data merge entity @s {width:1.05f,height:1.1f}
+
+# Charge relays from nearby hoppers
+execute as @e[tag=end_relay,tag=marker,nbt={data:{charged:0b}}] at @s run function end_relay:try_charge

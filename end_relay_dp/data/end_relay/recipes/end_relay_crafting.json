@@ -1,0 +1,15 @@
+{
+	"category": "blocks",
+	"type": "crafting_shaped",
+	"pattern": [
+		"OPO",
+		"PLP",
+		"OPO"
+	],
+	"key": {
+		"N": { "item": "minecraft:obsidian" },
+		"P": { "item": "minecraft:popped_chorus_fruit" },
+		"L": { "item": "minecraft:lodestone" }
+	},
+	"result": { "item": "minecraft:knowledge_book" }
+}
